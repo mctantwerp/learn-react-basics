@@ -50,5 +50,4 @@ this.setState((state, props) => ({
 }));
 ```
 
-{% embed url="https://reactjs.org/docs/state-and-lifecycle.html" %}
-
+[:octicons-link-external-16: React JS: State and lifecycle](https://reactjs.org/docs/state-and-lifecycle.html){.md-button target="_blank"}

@@ -6,7 +6,7 @@ Vooral uit nood om een ’standaard’ React setup te hebben om snel Proof Of Co
 
 Het enige dat je nodig hebt om CRA te gebruiken, is NodeJS. Daarna kan je in enkele seconden een basis React applicatie opzetten. Dat doe je door het volgende commando uit te voeren:
 
-```
+```sh
 npx create-react-app <mapnaam>
 cd <mapnaam>
 npm run start
@@ -14,7 +14,7 @@ npm run start
 
 Dit commando gaat de create-react-app uitvoeren (zonder dat een echte installatie nodig is) en een map aanmaken (met de naam die je invult in plaats van \<mapnaam>. Daarin wordt een volledige setup uitgevoerd van een React applicatie.
 
-![](https://camo.githubusercontent.com/b275c108e1c9e2d1c732a66ca1e0b6ecb1ae260824fb5d6ca4c4e46ee85d1ca0/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f66616365626f6f6b2f6372656174652d72656163742d61707040323762343261633765666130313866323534313135336162333064363331383066356661333965302f73637265656e636173742e737667)
+![Install react](/_resources/images/install_react.svg)
 
 Wanneer de setup afgerond is, zal je merken dat er de folder \<mapnaam> opgevuld is met een basis react app. Als we, zoals de setup op het einde aangeeft, naar de map navigeren via onze terminal, en daarin het commando `yarn start` of `npm run start` uitvoeren, zal je merken dat je browser wordt geopend en surft naar http://localhost:3000. Dit is de standaard url waarop NodeJS applicaties lokaal draaien.
 
@@ -26,7 +26,7 @@ De public folder bevat alle files die niet gecompileerd moeten worden. Daarin ka
 
 #### index.html
 
-```markup
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,24 +47,24 @@ De public folder bevat alle files die niet gecompileerd moeten worden. Daarin ka
 
 Hierboven een ietwat verkorte versie van de /public/index.html file. We zien hier enkele opmerkelijke dingen:
 
-```markup
+```html
 <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 ```
 
 Als we naar files uit de public folder willen refereren, dienen we de %PUBLIC\_URL% variabele gebruiken. Achterliggend wordt dit opgevangen en door de correcte url vervangen.
 
-```markup
+```html
 <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 ```
 
 Er wordt gerefereerd naar een manifest.json file. Die file bevat alle meta data voor browsers om deze applicatie (mits enkele requirements, zoals HTTPS), te herkennen als een web app (PWA) en die ook installeerbaar te maken vanuit de browser en hopelijk binnenkort ook vanuit enkele mobiele App stores.
 
-```markup
+```html
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
 ```
 
-Een \<noscript> tag die bezoekers laat weten dat er javascript wordt gebruikt om deze app te renderen. De \<noscript> tag is enkel zichtbaar als javascript is uitgeschakeld in een browser.
+Een `<noscript>` tag die bezoekers laat weten dat er javascript wordt gebruikt om deze app te renderen. De `<noscript>` tag is enkel zichtbaar als javascript is uitgeschakeld in een browser.
 
 De #root div herkennen we uit de voorgaande voorbeelden. Hierin gaat onze React applicatie gerenderd worden.
 
@@ -76,9 +76,9 @@ De src folder bevat eigenlijk alle React logica. Hierin gaan we al onze componen
 
 #### index.js
 
-Het startpunt van de applicatie. Hierin gebruiken we de ReactDOM.render functie om onze applicatie (standaard gewoon een \<App /> component) te renderen.
+Het startpunt van de applicatie. Hierin gebruiken we de ReactDOM.render functie om onze applicatie (standaard gewoon een `<App />` component) te renderen.
 
-```javascript
+```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -100,13 +100,12 @@ reportWebVitals();
 
 We zien hier meteen ook de moderne manier om React te gebruiken, als NPM package welke we importeren in onze javascript componenten. Op deze manier kan Webpack achterliggend heel efficiënt onze javascript code gaan bundelen, en worden enkel de scripts die we vanuit de index.js importeren, uiteindelijk gebundeld in de applicatie.
 
-{% hint style="info" %}
-Merk ook op dat we per component hier ook .css files kunnen inladen. Deze css files worden door Webpack mee gebundeld en bij een 'build' als aparte, geoptimaliseerde, gebundelde css file mee opgenomen.
-{% endhint %}
+!!! info ""
+    Merk ook op dat we per component hier ook .css files kunnen inladen. Deze css files worden door Webpack mee gebundeld en bij een 'build' als aparte, geoptimaliseerde, gebundelde css file mee opgenomen.
 
 #### App.js
 
-```javascript
+```js
 import logo from './logo.svg';
 import './App.css';
 
@@ -148,9 +147,7 @@ Er wordt een build folder aangemaakt met daarin alle geoptimaliseerde files.
 
 Ben je nieuwsgierig naar hoe zo'n create-react-app achter de schermen werkt, kan je éénmalig een commando uitvoeren om alle configuratie files en setup uit te node\_modules folder te halen en in de root van je project te zetten. Dat commando is het volgende: `yarn eject`
 
-{% hint style="warning" %}
-Opgelet, dit commando is onomkeerbaar! Hoewel je applicatie gewoon zal blijven werken als voorheen, zit je meteen met heel wat meer files en kans op misconfiguraties. Doe dit in het begin dus enkel bij een simpele setup die je enkel gebruikt om te oefenen, en maak desnoods een back-up (zonder de node\_modules folder!!) zodat je altijd terug kan.
-{% endhint %}
+!!! warning "Opgelet"
+    Dit commando is onomkeerbaar! Hoewel je applicatie gewoon zal blijven werken als voorheen, zit je meteen met heel wat meer files en kans op misconfiguraties. Doe dit in het begin dus enkel bij een simpele setup die je enkel gebruikt om te oefenen, en maak desnoods een back-up (zonder de node\_modules folder!!) zodat je altijd terug kan.
 
-{% embed url="https://github.com/facebook/create-react-app" %}
-
+[:octicons-link-external-16: Github: create-react-app](https://github.com/facebook/create-react-app){.md-button target="_blank"}

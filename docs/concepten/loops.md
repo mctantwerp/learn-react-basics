@@ -31,8 +31,8 @@ Als we deze data nu willen gebruiken in React, kunnen we dat op verschillende ma
 JSX kan Arrays van componenten meteen renderen. We kunnen dus gebruik maken van die Array.map functie om rechtstreeks een Array van React componenten op te bouwen. Dat zou er zo uit kunnen zien:
 
 ```javascript
-const commentsComponents = comments.map(comment => 
-    <Comment 
+const commentsComponents = comments.map(comment =>
+    <Comment
         author={comment.author}
         time={comment.timestamp}
     >{comment.message}</Comment>
@@ -50,8 +50,8 @@ De manier waarop we hierboven de Array.map gebruiken om comments te renderen, ga
 Een key toevoegen aan een element doe je bijvoorbeeld zo:
 
 ```javascript
-const commentsComponents = comments.map((comment, i) => 
-    <Comment 
+const commentsComponents = comments.map((comment, i) =>
+    <Comment
         key={`section-1-comment-${i}`} // een unieke key voor elke comment in section-1
         author={comment.author}
         time={comment.timestamp}
@@ -61,7 +61,11 @@ const commentsComponents = comments.map((comment, i) =>
 
 ### Voorbeeld
 
-{% embed url="https://codepen.io/TroTi13/pen/OJgKQWN?editors=1111" %}
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="OJgKQWN" data-user="TroTi13" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/TroTi13/pen/OJgKQWN">
+  React comments</a> by Bram Verdyck (<a href="https://codepen.io/TroTi13">@TroTi13</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-{% embed url="https://reactjs.org/docs/lists-and-keys.html" %}
-
+[:octicons-link-external-16: React JS: Lists and keys](https://reactjs.org/docs/lists-and-keys.html){.md-button target="_blank"}

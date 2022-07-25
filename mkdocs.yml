@@ -1,0 +1,118 @@
+site_name: React basics
+site_url: https://react.basics.learn.mctantwerp.be
+site_author: Bram Verdyck
+site_description: Basis cursus over het javascript React framework
+
+repo_name: mctantwerp/learn-react-basics
+repo_url: https://github.com/mctantwerp/learn-react-basics
+edit_uri: edit/main/docs/
+
+copyright: Karel de Grote Hogeschool<br>Multimedia & Creatieve Technologie
+
+nav:
+  - 👋 Welkom: index.md
+  - Getting started:
+    - getting-started/intro.md
+    - getting-started/prerequisites.md
+    - getting-started/syntax.md
+  - Concepten:
+    - concepten/jsx.md
+    - concepten/componenten.md
+    - concepten/props.md
+    - concepten/state.md
+    - concepten/lifecycle-events.md
+    - concepten/conditional-rendering.md
+    - concepten/loops.md
+  - Extras:
+    - extra/create-react-app.md
+    - extra/routing.md
+  - ❓ Appendix:
+    - appendix/index.md
+
+theme:
+  name: material
+
+  logo: _resources/graphics/logo_full.png
+  favicon: _resources/graphics/favicon.ico
+
+  language: nl
+  features:
+    - navigation.tracking
+    - navigation.instant
+    - navigation.top
+    - navigation.indexes
+    - content.code.annotate
+    - search.highlight
+    - search.share
+    - search.suggest
+
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    primary: black
+    accent: cyan
+
+plugins:
+  - search
+  - git-authors
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+  - git-committers:
+      repository: mctantwerp/learn-welkom
+      branch: develop
+      token: !!python/object/apply:os.getenv ["MKDOCS_GIT_COMMITTERS_APIKEY"]
+
+extra_css:
+  - _resources/styles/main.css
+
+extra_javascript:
+  - _resources/scripts/main.js
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - tables
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra:
+  analytics:
+    provider: google
+    property: G-ZZW6S6EENR
+  generator: false
+  social:
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/mct.kdg/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCVcQd6yzdN9kW16sXuN_8zQ
+    - icon: fontawesome/brands/github
+      link: https://github.com/mctantwerp
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/school/karel-de-grote-hogeschool/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/mctantwerp
+    - icon: fontawesome/brands/vimeo
+      link: https://vimeo.com/mctantwerp
