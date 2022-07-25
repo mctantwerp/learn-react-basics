@@ -1,25 +1,28 @@
-# Intro
+# Usage
 
-Het bouwen van moderne web applicaties wordt steeds meer complex. Daarom groeit de nood aan tools en frameworks om het bouwen van zulke web applicaties gestructureerder en sneller te kunnen bouwen.
+* Zorg ervoor dat je zeker python3 hebt
+* Installeer mkdocs (`pip install mkdocs`)
+* Installeer mkdocs-material (`pip install mkdocs-material`)
+* Installeer de vereiste packages (Zie `Gebruikte packages` onderaan)
+* Use `mkdocs serve` om de site lokaal te kunnen bekijken
 
-Voor front-end applicaties zijn er ondertussen een hele waaier aan frameworks en tools die kunnen helpen bij het bouwen van kleine en grote applicaties. Elk framework heeft zijn voor -en nadelen.
+## Belangrijk!
 
-De meest populaire frameworks op dit moment zijn:
+Wij gebruiken het **material insiders** thema wat ons extra features en opties geeft. Als je lokaal test kan het zijn dat niet alles er grafisch doorkomt zoals je zou willen op basis van de kitchensink. Don't worry! Eens dit online gebuild wordt komt dit helemaal goed.
 
-{% embed url="https://reactjs.org/" %}
+Bij grotere aanpassingen of het schrijven van mini courses zal er altijd een online testomgeving voorzien worden waarop je kan testen en al je aanpassingen wel kan bekijken. Contacteer sam.serrien@kdg.be indien je hier gebruik van wil maken.
 
-{% embed url="https://angular.io/" %}
+# Gebruikte packages
 
-{% embed url="https://vuejs.org/" %}
+pip install mkdocs-git-committers-plugin-2
+pip install mkdocs-git-revision-date-localized-plugin
+pip install mkdocs-git-authors-plugin
 
-Indien je graag meer inzichten hebt in de populariteit, gebruik en andere statistieken rond het gebruik van javascript in het algemeen, kan je terecht op de 'State Of JS' website. Het meest recente rapport dateert uit 2020:
+# Interesting features / settings
 
-{% embed url="https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/" %}
+## Geen toggles maar sections voor 1ste level van navigatie
 
-Als we kijken naar de leercurve van bovenstaande frameworks, dan kunnen is Vue.js de makkelijkste om te leren. De drempel tussen javascript, of libraries zoals jQuery, is relatief klein en je kan dit framework makkelijk toevoegen aan bestaande websites zonder dat dit veel extra werk vereist.
-
-Angular daarentegen vereist best wat voorkennis. Het framework werkt met Typescript, wat vergelijkbaar is met Sass voor CSS, een extra laag bovenop Javascript die heel wat extra's biedt, maar wel moet omgezet worden naar javascript voor het gebruikt kan worden. Daarnaast verliest Angular de laatste jaren sterk aan populariteit, mede omdat er meer concurrentie op de markt komt.
-
-React zit daar ergens tussen. Je kan React gebruiken als een library die je aan een bestaande web app toevoegt om complexere logica af te handelen, maar je kan ook een web app maken die volledig binnen React leeft.
-
-In deze introductie buigen we ons eerst over de basisconcepten van React en zullen we stapsgewijs een eenvoudige web app opbouwen.
+```md
+features
+    - navigation.sections
+```
