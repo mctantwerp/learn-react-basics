@@ -2,9 +2,8 @@
 
 In de 'Getting Started' hebben we al een teaser gekregen van JSX en hoe JSX eigenlijk best hard lijkt op gewone HTML. Laat ons even iets dieper duiken in wat JSX juist is, en wat het NIET is.
 
-{% hint style="info" %}
-JSX is, net als React en Yarn, ontwikkeld door Facebook
-{% endhint %}
+!!! info ""
+    JSX is, net als React en Yarn, ontwikkeld door Facebook
 
 ## JSX: Javascript XML
 
@@ -12,47 +11,45 @@ JSX is een syntax extensie die gebouwd is op Ecmascript (Javascript), om op een 
 
 Een voorbeeld van hoe een functie zonder JSX en met JSX er kan uitzien:
 
-{% tabs %}
-{% tab title="Zonder JSX" %}
-```javascript
-function HelloWorld() {
-    const wrapper = document.createElement('div');
-    const heading= document.createElement('h1');
-    const content = document.createTextNode('Hello, world');
-    
-    wrapper.classList.add('wrapper');
-    heading.classList.add('heading--1');
-    
-    heading.appendChild(content);
-    wrapper.appendChild(heading);
-    
-    return wrapper;
-}
+=== "Zonder JSX"
 
-// een extra om even de implementatie dan te tonen
-document.querySelector('#root').appendChild(HelloWorld());
-```
-{% endtab %}
+    ```js
+    function HelloWorld() {
+        const wrapper = document.createElement('div');
+        const heading= document.createElement('h1');
+        const content = document.createTextNode('Hello, world');
 
-{% tab title="Met JSX" %}
-```javascript
-function HelloWorld() {
-    return <div className="wrapper">
-        <h1 className="heading--1">Hello, world</h1>
-    </div>;
-}
+        wrapper.classList.add('wrapper');
+        heading.classList.add('heading--1');
 
-ReactDOM.render(
-  <HelloWorld/>,
-  document.querySelector('#root')
-);
-```
-{% endtab %}
-{% endtabs %}
+        heading.appendChild(content);
+        wrapper.appendChild(heading);
+
+        return wrapper;
+    }
+
+    // een extra om even de implementatie dan te tonen
+    document.querySelector('#root').appendChild(HelloWorld());
+    ```
+
+=== "Met JSX"
+
+    ```js
+    function HelloWorld() {
+        return <div className="wrapper">
+            <h1 className="heading--1">Hello, world</h1>
+        </div>;
+    }
+
+    ReactDOM.render(
+        <HelloWorld/>,
+        document.querySelector('#root')
+    );
+    ```
 
 In bovenstaand voorbeeld zien we een hele eenvoudige component die niet veel meer doet dan een boodschap tonen in een titel.
 
-#### /sidenote
+#### sidenote
 
 In het voorbeeld zonder JSX zouden we gebruik kunnen maken van _innerHTML_ in plaats van de appendChild methode. Dat zou er dan zo uit zien:
 
@@ -71,11 +68,11 @@ Nu denk je waarschijnlijk, dit is gewoon nog korter dan de JSX versie. Klopt! En
 
 Hoewel JSX sterk lijkt op HTML, is het dat natuurlijk niet. Achter de schermen worden JSX tags omgezet naar Javascript functionaliteiten. Je kan JSX herkennen aan een aantal duidelijke verschillen:
 
-### \<Self-closing tags />
+### `<Self-closing tags />`
 
 We kennen in HTML al self-closing tags, tags die geen inhoud hebben mogen afgesloten worden in éénzelfde tag. Enkele voorbeelden:
 
-```markup
+```html
 <img src="/images/placeholder.png" />
 <br />
 ```
@@ -84,7 +81,7 @@ In JSX MOET een tag die geen inhoud heeft, altijd zichzelf meteen ook afsluiten.
 
 Zo kan je, in tegenstelling tot in HTML, elke tag self-closing schrijven in JSX:
 
-```markup
+```html
 <div />
 <span />
 <br />
@@ -92,9 +89,9 @@ Zo kan je, in tegenstelling tot in HTML, elke tag self-closing schrijven in JSX:
 
 ### Root element
 
-Zoals de afkorting JSX zelf vermeld, is JSX gebaseerd op de XML syntax, net zoals HTML. De XML syntax gaat steeds uit van een Root element met daarin een verzameling van componenten (children). Als je dus meerdere JSX componenten tegelijk wil renderen, zal je die altijd in een overkoepelend element moeten steken. Dit kan een simpele DIV component zijn, of als je geen HTML tag wil renderen kan je gebruik maken van [Fragments](https://reactjs.org/docs/fragments.html).
+Zoals de afkorting JSX zelf vermeld, is JSX gebaseerd op de XML syntax, net zoals HTML. De XML syntax gaat steeds uit van een Root element met daarin een verzameling van componenten (children). Als je dus meerdere JSX componenten tegelijk wil renderen, zal je die altijd in een overkoepelend element moeten steken. Dit kan een simpele DIV component zijn, of als je geen HTML tag wil renderen kan je gebruik maken van [Fragments](https://reactjs.org/docs/fragments.html){:target="_blank"}.
 
-```markup
+```html
 <div>
     <div />
     <span />
@@ -106,7 +103,7 @@ Zoals de afkorting JSX zelf vermeld, is JSX gebaseerd op de XML syntax, net zoal
 
 JSX biedt ook de mogelijkheid om variabelen te gebruiken. Die herken je steeds aan de accolades (brackets, { }). Variabelen kunnen als content van een element worden gebruikt, maar ook als waarde van een attribuut / prop.
 
-```markup
+```html
 <div>{ content }</div>
 ```
 
@@ -114,7 +111,7 @@ JSX biedt ook de mogelijkheid om variabelen te gebruiken. Die herken je steeds a
 
 In HTML zijn we gewend om attributen op elementen te zetten in de vorm van een string. Denk bijvoorbeeld aan een afbeelding en het _src_ attribuut:
 
-```markup
+```html
 <img src="/images/placeholder.png" />
 ```
 
@@ -129,13 +126,13 @@ const imageSource = '/images/placeholder.png';
 
 Een duidelijk verschil merk je op bij het toevoegen van een class. In HTML doe je dit door het attribuut ‘class’ toe te voegen. Daar dit een _reserved word_ is in Javascript, wordt in JSX de ’className’ property gebruikt.
 
-```markup
+```html
 <div className="wrapper">lorem ipsum</div>
 ```
 
 Hetzelfde geldt voor het keyword ’for’, welke je op een label kan gebruiken. For in Javascript wordt gebruikt in loops. Om dit te vermijden wordt gebruik gemaakt van ’htmlFor’.
 
-```markup
+```html
 <label htmlFor=“input”>Label</label>
 ```
 
@@ -147,6 +144,5 @@ Een event listener en event handler toevoegen met JSX doet denken aan de ’olds
 <div onClick={ () => alert('hello') }>Click me, I'm a button?</div>
 ```
 
-{% hint style="info" %}
-Let op de camel case notatie. In HTML zijn deze inline argumenten lowercase. In JSX zijn deze geschreven in de (lower) camel case notatie.
-{% endhint %}
+!!! info ""
+    Let op de camel case notatie. In HTML zijn deze inline argumenten lowercase. In JSX zijn deze geschreven in de (lower) camel case notatie.

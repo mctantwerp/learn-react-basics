@@ -6,15 +6,17 @@ Voor front-end applicaties zijn er ondertussen een hele waaier aan frameworks en
 
 De meest populaire frameworks op dit moment zijn:
 
-{% embed url="https://reactjs.org/" %}
+<div class="grid cards" markdown>
 
-{% embed url="https://angular.io/" %}
+- :fontawesome-brands-html5: [React JS](https://reactjs.org){:target="_blank"}
+- :fontawesome-brands-angular: [Angular](https://angular.io){:target="_blank"}
+- :fontawesome-brands-vuejs: [Vue JS](https://vuejs.org){:target="_blank"}
 
-{% embed url="https://vuejs.org/" %}
+</div>
 
 Indien je graag meer inzichten hebt in de populariteit, gebruik en andere statistieken rond het gebruik van javascript in het algemeen, kan je terecht op de 'State Of JS' website. Het meest recente rapport dateert uit 2020:
 
-{% embed url="https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/" %}
+[State of JS: Frontend frameworks](https://2020.stateofjs.com/en-US/technologies/front-end-frameworks/){ .md-button target="_blank" }
 
 Als we kijken naar de leercurve van bovenstaande frameworks, dan kunnen is Vue.js de makkelijkste om te leren. De drempel tussen javascript, of libraries zoals jQuery, is relatief klein en je kan dit framework makkelijk toevoegen aan bestaande websites zonder dat dit veel extra werk vereist.
 
