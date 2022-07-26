@@ -22,8 +22,7 @@ function App() {
 }
 ```
 
-{% hint style="info" %}
-Props zijn read-only, de data kan dus ingelezen worden, maar niet worden aangepast.
-{% endhint %}
+!!! info ""
+    Props zijn read-only, de data kan dus ingelezen worden, maar niet worden aangepast.
 
-{% embed url="https://reactjs.org/docs/components-and-props.html" %}
+[:octicons-link-external-16: React JS: Components and props](https://reactjs.org/docs/components-and-props.html){.md-button target="_blank"}

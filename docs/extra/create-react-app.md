@@ -100,9 +100,8 @@ reportWebVitals();
 
 We zien hier meteen ook de moderne manier om React te gebruiken, als NPM package welke we importeren in onze javascript componenten. Op deze manier kan Webpack achterliggend heel efficiënt onze javascript code gaan bundelen, en worden enkel de scripts die we vanuit de index.js importeren, uiteindelijk gebundeld in de applicatie.
 
-{% hint style="info" %}
-Merk ook op dat we per component hier ook .css files kunnen inladen. Deze css files worden door Webpack mee gebundeld en bij een 'build' als aparte, geoptimaliseerde, gebundelde css file mee opgenomen.
-{% endhint %}
+!!! info ""
+    Merk ook op dat we per component hier ook .css files kunnen inladen. Deze css files worden door Webpack mee gebundeld en bij een 'build' als aparte, geoptimaliseerde, gebundelde css file mee opgenomen.
 
 #### App.js
 
@@ -148,8 +147,7 @@ Er wordt een build folder aangemaakt met daarin alle geoptimaliseerde files.
 
 Ben je nieuwsgierig naar hoe zo'n create-react-app achter de schermen werkt, kan je éénmalig een commando uitvoeren om alle configuratie files en setup uit te node\_modules folder te halen en in de root van je project te zetten. Dat commando is het volgende: `yarn eject`
 
-{% hint style="warning" %}
-Opgelet, dit commando is onomkeerbaar! Hoewel je applicatie gewoon zal blijven werken als voorheen, zit je meteen met heel wat meer files en kans op misconfiguraties. Doe dit in het begin dus enkel bij een simpele setup die je enkel gebruikt om te oefenen, en maak desnoods een back-up (zonder de node\_modules folder!!) zodat je altijd terug kan.
-{% endhint %}
+!!! warning "Opgelet"
+    Dit commando is onomkeerbaar! Hoewel je applicatie gewoon zal blijven werken als voorheen, zit je meteen met heel wat meer files en kans op misconfiguraties. Doe dit in het begin dus enkel bij een simpele setup die je enkel gebruikt om te oefenen, en maak desnoods een back-up (zonder de node\_modules folder!!) zodat je altijd terug kan.
 
-{% embed url="https://github.com/facebook/create-react-app" %}
+[:octicons-link-external-16: Github: create-react-app](https://github.com/facebook/create-react-app){.md-button target="_blank"}

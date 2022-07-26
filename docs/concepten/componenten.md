@@ -18,10 +18,21 @@ function HelloWorld() {
 }
 ```
 
-{% embed url="https://codepen.io/TroTi13/pen/VwWOZBb?editors=1010" %}
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="VwWOZBb" data-user="TroTi13" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/TroTi13/pen/VwWOZBb">
+  React functional components</a> by Bram Verdyck (<a href="https://codepen.io/TroTi13">@TroTi13</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+
 
 ## Class components
 
 Class components dienen voor complexere componenten. Een component die bijvoorbeeld een waarde moet kunnen onthouden ([state](state.md)) en daarmee logica uitvoeren. Een component die net voor of net na de render functie iets moet uitvoeren ([lifecycle events](lifecycle-events.md)). Een class component wordt ook een _stateful_ component genoemd, omdat deze component een state heeft (ook al is die leeg).
 
-{% embed url="https://codepen.io/TroTi13/pen/WNOBRgb" %}
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="WNOBRgb" data-user="TroTi13" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/TroTi13/pen/WNOBRgb">
+  React class components</a> by Bram Verdyck (<a href="https://codepen.io/TroTi13">@TroTi13</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>

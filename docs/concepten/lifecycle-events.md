@@ -20,5 +20,4 @@ componentWillUnmount {
 }
 ```
 
-{% embed url="https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class" %}
-
+[:octicons-link-external-16: React JS: State and lifecycle](https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class){.md-button target="_blank"}

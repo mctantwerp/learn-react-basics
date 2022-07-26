@@ -33,53 +33,50 @@ We zien hier een specifieke versie van de React Router module, speciaal voor geb
 
 Na het installeren van de Router module moeten we deze toevoegen in onze applicatie. In de meeste gevallen gebruiken we 1 routing voor de volledige app. We moeten de \<App /> component dus laten weten dat er genavigeerd kan worden. Dat doen we zo:
 
-{% code title="index.js" %}
-```javascript
-...
-import { BrowserRouter as Router } from 'react-router-dom';
+=== "index.js"
 
-...
-
-ReactDom.render(<Router><App /></Router>, document.getElementById('root'));
-```
-{% endcode %}
+    ```javascript
+    ...
+    import { BrowserRouter as Router } from 'react-router-dom';
+    ...
+    ReactDom.render(<Router><App /></Router>, document.getElementById('root'));
+    ...
+    ```
 
 Door de \<App /> component in de \<Router /> component te zetten, kunnen we binnen de \<App /> component onze routes gaan definiëren.
 
 Een route definiëren doe je zo, in de \<App /> component:
 
-{% code title="App.js" %}
-```javascript
-...
-import { Route } from 'react-router-dom';
+=== "App.js"
 
-...
-
-// in de render functie van <App />
-<Route path="/" component={Home} />
-```
-{% endcode %}
+    ```javascript
+    ...
+    import { Route } from 'react-router-dom';
+    ...
+    // in de render functie van <App />
+    <Route path="/" component={Home} />
+    ```
 
 Bovenstaande regel registreert een nieuwe route, de basisroute ( / ) waarop de \<Home /> component moet gerenderd worden.
 
 Stel dat je in je \<App /> component variabelen hebt (bijvoorbeeld een state) die je via props wil doorgeven aan je component, dan kan je dat op volgende manier doen:
 
-{% code title="App.js" %}
-```javascript
-// in de render functie van <App />
-<Route path="/comments" render={
-    (props) => (
-        <CommentsList {...props} comments={this.state.comments} />
-    )
-} />
-```
-{% endcode %}
+=== "App.js"
+
+    ```javascript
+    // in de render functie van <App />
+    <Route path="/comments" render={
+        (props) => (
+            <CommentsList {...props} comments={this.state.comments} />
+        )
+    } />
+    ```
 
 Dit is een ietwat complexere notatie, waarbij we een render functie gebruiken. In deze render functie kan je conditioneel componenten renderen, of bijvoorbeeld props meegeven aan componenten. De (props) die in de functie worden meegegeven, zijn standaard props van de router. De props die worden meegegeven aan elke component die via een Route wordt gerenderd zijn de volgende:
 
-* [match](https://reactrouter.com/web/api/match)
-* [location](https://reactrouter.com/web/api/location)
-* [history](https://reactrouter.com/web/api/history)
+* [match](https://reactrouter.com/web/api/match){:target="_blank"}
+* [location](https://reactrouter.com/web/api/location){:target="_blank"}
+* [history](https://reactrouter.com/web/api/history){:target="_blank"}
 
 Je kan ook dynamische routes aanmaken, waarbij een deel van de routenaam bestaat uit een variabel deel. Dit doe je als volgt:
 
@@ -102,16 +99,16 @@ import { Link } from 'react-router-dom';
 
 De \<Link /> component is gemaakt voor basis links, eigenlijk voor gebruik doorheen de applicatie maar als je links wil gebruiken in een navigatie kan je beter gebruik maken van de \<NavLink /> component. Bij deze component kan je bijvoorbeeld handig gebruik maken van de activeClassName prop, om een class toe te voegen als de route actief is. Dat doe je zo:
 
-{% code title="Nav.js" %}
-```javascript
-...
-import { NavLink } from 'react-router-dom';
-...
+=== "Nav.js"
 
-// in de render functie van <Nav />
-<NavLink to="/comments" activeClassName="active">Comments</Link>
-```
-{% endcode %}
+    ```javascript
+    ...
+    import { NavLink } from 'react-router-dom';
+    ...
+
+    // in de render functie van <Nav />
+    <NavLink to="/comments" activeClassName="active">Comments</Link>
+    ```
 
 ### Switch
 
@@ -119,34 +116,34 @@ Eenmaal je routes begint aan te maken, zal je snel merken dat bijvoorbeeld de al
 
 Dit ziet er dan ongeveer zo uit:
 
-{% code title="App.js" %}
-```javascript
-...
-import { Route, Switch } from 'react-router-dom';
-...
-// in de render functie van <App />
-<Switch>
-    <Route path="/comments/:id" component={Comment} />
-    <Route path="/comments" render={
-        (props) => (
-            <CommentsList {...props} comments={this.state.comments} />
-        )
-    } />
-    <Route path="/" component={Home} />
-</Switch>
-```
-{% endcode %}
+=== "App.js"
+
+    ```javascript
+    ...
+    import { Route, Switch } from 'react-router-dom';
+    ...
+    // in de render functie van <App />
+    <Switch>
+        <Route path="/comments/:id" component={Comment} />
+        <Route path="/comments" render={
+            (props) => (
+                <CommentsList {...props} comments={this.state.comments} />
+            )
+        } />
+        <Route path="/" component={Home} />
+    </Switch>
+    ```
 
 Moest je toch mismatches krijgen, kan je nog altijd gebruik maken van de exact prop. Deze zorgt ervoor dat de Route exact moet matchen met de path prop van een component om te activeren:
 
-{% code title="App.js" %}
-```javascript
-<Route path="/" exact component={Home} />
-```
-{% endcode %}
+=== "App.js"
+
+    ```javascript
+    <Route path="/" exact component={Home} />
+    ```
 
 ### Meer info
 
 Meer informatie over het gebruik van de Router vind je op de volgende link:
 
-{% embed url="https://reactrouter.com/web/guides/quick-start" %}
+[:octicons-link-external-16: Reactrouter: Quick start](https://reactrouter.com/web/guides/quick-start){.md-button target="_blank"}
